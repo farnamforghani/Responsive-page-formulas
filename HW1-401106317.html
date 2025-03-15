@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Farnam Forghani">
+    <meta name="description" content="Responsive page of formulas">
+    <meta name="keywords" content="html, javascript, css, bootstrap">
+    <title>Formula Page</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Here is the style for background, it is a linear gradient background animation */
+        body {
+            background: linear-gradient(to bottom right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 500% 500%;
+            animation: bg-gradient 6s ease 0s infinite alternate;
+        }
+        @keyframes bg-gradient {
+            from {
+                background-position: 0% 50%;
+            }
+
+            to {
+                background-position: 100% 50%;
+            }
+        }
+        /* Here is the style for formulas */
+        formula {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<!-- In the body class, we use bootstrap framework, so we use classes in the tags -->
+<body class="bg-light">
+    <div class="container py-4">
+        <!-- Price Calculation Section -->
+        <div class="row mb-4">
+            <div class="col-md-8 mx-auto p-4 bg-white shadow rounded">
+                <h1 class="text-center mb-3">Price Calculation</h1>
+                <div class="mb-2">
+                    <input type="text" id="fee" class="form-control" placeholder="Fee"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="count" class="form-control" placeholder="Counter"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="discount" class="form-control" placeholder="Discount"/>
+                </div>
+                <formula evaluator="count*fee-discount" class="text-center"></formula>
+            </div>
+        </div>
+
+        <!-- Average Calculation Section -->
+        <div class="row mb-4">
+            <div class="col-md-8 mx-auto p-4 bg-white shadow rounded">
+                <h1 class="text-center mb-3">Average Calculation</h1>
+                <div class="mb-2">
+                    <input type="text" id="firstNumber" class="form-control" placeholder="First Number"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="secondNumber" class="form-control" placeholder="Second Number"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="thirdNumber" class="form-control" placeholder="Third Number"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="fourthNumber" class="form-control" placeholder="Fourth Number"/>
+                </div>
+                <formula evaluator="(firstNumber + secondNumber + thirdNumber + fourthNumber)/4" class="text-center"></formula>
+            </div>
+        </div>
+
+        <!-- Quadratic Formula Section -->
+        <div class="row">
+            <div class="col-md-8 mx-auto p-4 bg-white shadow rounded">
+                <h1 class="text-center mb-3">Quadratic Formula Calculation</h1>
+                <div class="mb-2">
+                    <input type="text" id="a" class="form-control" placeholder="a"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="b" class="form-control" placeholder="b"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="c" class="form-control" placeholder="c"/>
+                </div>
+                <div class="mb-2">
+                    <input type="text" id="x" class="form-control" placeholder="x"/>
+                </div>
+                <formula evaluator="(a*x*x)+(b*x)+c" class="text-center"></formula>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./HW1-401106317.js"></script>
+</body>
+</html>
